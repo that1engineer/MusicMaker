@@ -1,0 +1,36 @@
+<!-- THIS IS WHAT DISPLAYS IN LOCALHOST:3000/SONGS -->
+
+<h1>Songs</h1>
+
+<%= link_to 'Create New Song', new_song_path %>
+<br>
+<br>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Tempo</th>
+    <th>Signature</th>
+    <th>Key</th>
+    <th>Descriptor</th>
+    <th>Chords</th>
+    <th>Scale</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.tempo %></td>
+      <td><%= song.signature %></td>
+      <td><%= song.key %></td>
+      <td><%= song.chords %></td>
+      <td><%= song.scale %></td>
+      <td><%= link_to 'Show', song_path(song) %></td>
+      <td><%= link_to 'Edit', edit_song_path(song) %></td>
+      <td><%= link_to 'Delete', song_path(song),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

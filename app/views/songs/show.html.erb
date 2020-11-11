@@ -1,0 +1,31 @@
+<h1>
+  <%= @song.title %>
+</h1>
+
+<p>
+  <strong>Tempo:</strong>
+  <%= @song.tempo %>
+</p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @song.signature %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @song.key %>
+</p>
+
+<p>
+  <strong>Chords:</strong>
+  <%= @song.chords %>
+</p>
+
+<p>
+  <strong>Scale:</strong>
+  <%= @song.scale %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %>
+<%= link_to 'Back', songs_path %>

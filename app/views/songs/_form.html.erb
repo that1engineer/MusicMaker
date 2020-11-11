@@ -1,0 +1,68 @@
+<%= form_with model: @song, local: true do |form| %>
+ 
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@song.errors.count, "error") %> prohibited
+        this song from being saved:
+      </h2>
+      <ul>
+        <% @song.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :tempo %><br>
+    <%= form.number_field :tempo %>
+  </p>
+
+  <p>
+    <%= form.label :signature %><br>
+    <%= form.text_field :signature %>
+  </p>
+
+  <p>
+    <%= form.label :key %><br>
+    <%= form.text_field :key %>
+  </p>
+
+  <p>
+    <%= form.label :chords %><br>
+    <%= form.text_area :chords %>
+  </p>
+
+  <p>
+    <%= form.label :scale %><br>
+    <%= form.text_field :scale %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+
+<!--
+
+<html lang="en">
+    <script>
+
+      /*var num = 4;
+      if (num == 4) {
+        document.write("Four!");
+      }*/
+
+      var descriptor = "";
+
+      
+
+    </script>
+  </html>-->
